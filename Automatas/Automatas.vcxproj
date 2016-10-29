@@ -145,19 +145,21 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\Automatas Final\Automatas\Automatas\Estado.h" />
     <ClInclude Include="AFD.h" />
     <ClInclude Include="AP.h" />
     <ClInclude Include="Automata_Abstract.h" />
+    <ClInclude Include="Estado.h" />
+    <ClInclude Include="MT.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\Automatas Final\Automatas\Automatas\Estado.cpp" />
     <ClCompile Include="AFD.cpp" />
     <ClCompile Include="AP.cpp" />
     <ClCompile Include="Automatas_Main.cpp" />
     <ClCompile Include="Automata_Abstract.cpp" />
+    <ClCompile Include="Estado.cpp" />
+    <ClCompile Include="MT.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

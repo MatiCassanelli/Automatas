@@ -5,16 +5,26 @@
 class AP : public Automata_Abstract
 {
 private:
-	char elemento_tope;
-	char simbolo_pila_vacia;
-	stack <char> pila;
+	string simbolo_pila_vacia = "#";
+	stack <string> pila;
+	vector<string> elementos_en_pila;
+	Estado ***cubo;
 public:
 	AP();
-	AP(char);
+	AP(string);
 	~AP();
-	void crear_tabla_f();
+	void funcion_transicion();
 	void rellenar();
 	void mostrar_tabla_f();
 	void comprobar_palabra();
+	void ingresar_elemento_pila_repetido();
+	void ingresar_elemento_pila();
+	int buscar_elemento_pila(string);
+	void setEstado(int, int, int, Estado);
+
+	//esto se borra dsp!!!!
+	void setElementos(string);
+	void setEstados(Estado);
+	void setAlfabeto(string);
 };
 

@@ -1,3 +1,4 @@
+#pragma once
 #include "Estado.h"
 #include <vector>
 #include <iostream>
@@ -12,7 +13,7 @@ protected:
 	Estado estado_actual;
 
 public:
-	virtual void crear_tabla_f() = 0;	//implementar en todas
+	virtual void funcion_transicion() = 0;	//implementar en todas
 	virtual void rellenar() = 0;	//implementar en todas
 	virtual void mostrar_tabla_f() = 0;		//implementar en todas
 	void ingresar_alfabeto();	//implementada aca

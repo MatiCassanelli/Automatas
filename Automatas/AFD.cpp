@@ -6,15 +6,14 @@ AFD::AFD()
 {
 	ingreso_alfabeto_repetido();
 	ingreso_estados_repetido();
-	crear_tabla_f();
+	funcion_transicion();
 }
-
 
 AFD::~AFD()
 {
 }
 
-void AFD::crear_tabla_f()
+void AFD::funcion_transicion()
 {
 	matriz = new Estado*[estados.size()];				//filas
 	for (int i = 0; i < estados.size(); i++)

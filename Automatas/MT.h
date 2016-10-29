@@ -1,12 +1,14 @@
 #include "Automata_Abstract.h"
 
-class AFD : public Automata_Abstract
+
+class MT : public Automata_Abstract
 {
 private:
-	Estado **matriz;
+	Estado ***cubo;
+	char cabezal;
 public:
-	AFD();
-	~AFD();
+	MT();
+	~MT();
 	void funcion_transicion();
 	void rellenar();
 	void mostrar_tabla_f();
