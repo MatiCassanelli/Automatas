@@ -4,24 +4,33 @@
 #include "stdafx.h"
 #include "AFD.h"
 #include "AP.h"
+#include "MT.h"
 
 
 int main()
 {
+
+	//AP ap = AP();
+	//cout << endl << "Ingrese @ si quiere ingresar otra palabra." << endl << endl;
+	//do {
+	//	ap.comprobar_palabra();
+	//	cout << endl << endl << "Ingrese nueva palabra:" << endl;
+	//} while (0 != 1);
+
 	//AFD afd = AFD();
 	//afd.mostrar_tabla_f();
 	//afd.comprobar_palabra();
 
-	Estado q0, q1, q2, qS;
-	AP ap = AP();
+	//AP ap = AP();
+	//ap.comprobar_palabra();
 
-	ap.setAlfabeto("a");
-	ap.setAlfabeto("b");
-	ap.setEstados(q0);
-	ap.setEstados(q1);
-	ap.setEstados(q2);
-	ap.setEstados(qS);
-	ap.setElementos("a");
+	MT mt = MT();
+	cout << endl << "Ingrese @ si quiere ingresar otra palabra." << endl << endl;
+	do {
+		mt.comprobar_palabra();
+		cout << endl << endl << "Ingrese nueva palabra:" << endl;
+	} while (0 != 1);
+
 
 
 	system("Pause");

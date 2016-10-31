@@ -1,5 +1,6 @@
 #pragma once
 #include "Automata_Abstract.h"
+#include "Estado_AP.h"
 #include <stack>
 
 class AP : public Automata_Abstract
@@ -9,6 +10,7 @@ private:
 	stack <string> pila;
 	vector<string> elementos_en_pila;
 	Estado ***cubo;
+	Estado qe = Estado("qe", false, false);
 public:
 	AP();
 	AP(string);

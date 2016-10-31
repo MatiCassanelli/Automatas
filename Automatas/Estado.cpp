@@ -42,3 +42,33 @@ void Estado::cambiar_inicial(bool cambio)
 {
 	inicial = cambio;
 }
+
+void Estado::setApilado(int sa)
+{
+	apilado = sa;
+}
+
+int Estado::getApilado()
+{
+	return apilado;
+}
+
+void Estado::setDesplazamiento(int sdes)
+{
+	desplazamiento = sdes;
+}
+
+int Estado::getDesplazamiento()
+{
+	return desplazamiento;
+}
+
+void Estado::setEscribe(string sescribe)
+{
+	escribe = sescribe;
+}
+
+string Estado::getEscribe()
+{
+	return escribe;
+}

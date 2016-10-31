@@ -28,7 +28,6 @@ void AFD::rellenar()
 	for (int j = 0; j < estados.size(); j++)
 		for (int i = 0; i < alfabeto_entrada.size(); i++)
 		{
-			int k = 0;
 			cout << "Usted esta en el estado " << estados[j].getNombre() << " y viene el elemento " <<
 				alfabeto_entrada[i] << " pasamos al estado: ";
 			cin >> ingreso;
