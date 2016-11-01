@@ -17,19 +17,19 @@ int main()
 	//	cout << endl << endl << "Ingrese nueva palabra:" << endl;
 	//} while (0 != 1);
 
-	//AFD afd = AFD();
-	//afd.mostrar_tabla_f();
-	//afd.comprobar_palabra();
+	AFD afd = AFD();
+	afd.mostrar_tabla_f();
+	afd.comprobar_palabra();
 
 	//AP ap = AP();
 	//ap.comprobar_palabra();
 
-	MT mt = MT();
-	cout << endl << "Ingrese @ si quiere ingresar otra palabra." << endl << endl;
-	do {
-		mt.comprobar_palabra();
-		cout << endl << endl << "Ingrese nueva palabra:" << endl;
-	} while (0 != 1);
+	//MT mt = MT();
+	//cout << endl << "Ingrese @ si quiere ingresar otra palabra." << endl << endl;
+	//do {
+	//	mt.comprobar_palabra();
+	//	cout << endl << endl << "Ingrese nueva palabra:" << endl;
+	//} while (0 != 1);
 
 
 
