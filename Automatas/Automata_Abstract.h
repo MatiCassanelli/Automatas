@@ -25,4 +25,6 @@ public:
 	void ingreso_estados_repetido();	//implementada aca
 	Estado ingresar_info_estado();	//implementada aca
 	int existeInicial();	//implementado aca
+
+	void setLED(char letra);
 };

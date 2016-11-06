@@ -126,13 +126,17 @@ void AP::comprobar_palabra()
 						pila.pop();
 
 						if (pila.top() == "#")
-							cout << endl << "Palabra aceptada"<<endl;
+							//cout << endl << "Palabra aceptada"<<endl;
+							setLED('b');
 						else
-							cout << endl << "Palabra no aceptada en el lenguaje"<<endl;
+							//cout << endl << "Palabra no aceptada en el lenguaje"<<endl;
+							setLED('a');
+						cout << endl;
 					}
 				}
 				else 
-					cout << endl << "Palabra no aceptada en el lenguaje"<<endl;
+					setLED('a');
+					//cout << endl << "Palabra no aceptada en el lenguaje"<<endl;
 			}
 		}
 		else {
