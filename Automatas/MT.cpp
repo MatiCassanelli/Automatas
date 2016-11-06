@@ -56,7 +56,7 @@ void MT::rellenar()
 					cin >> escribir;
 				}
 
-				cout << "Y el movimiento es:" << endl << "Derecha--> 1, Izquierda--> -1, Parar--> 0: ";
+				cout << "El movimiento es:" << endl << "Derecha--> 1, Izquierda--> -1, Parar--> 0: ";
 				cin >> ingreso_despl;
 
 				while (ingreso_despl != -1 && ingreso_despl != 0 && ingreso_despl != 1)

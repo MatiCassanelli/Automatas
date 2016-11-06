@@ -81,26 +81,33 @@ void AFD::comprobar_palabra()
 	{
 		int i = 0, j = 0;
 
+		for (int i = 0; i < palabra.size(); i++)
+			cout << palabra[i];
+
 		ingreso = _getch();
 		parche = ingreso;
 		if (buscarAlfabeto(parche) != -1)
 			palabra.push_back(ingreso);
-		for (int i = 0; i < palabra.size(); i++)
-			cout << palabra[i];
 
 		i = buscarAlfabeto(parche);
 		j = buscarEstado(estado_actual.getNombre());
 
 		if (i == -1)
-			cout << endl << "Ingreso un elemento no existente en el alfabeto de entrada" << endl;
+			if (ingreso != '@')
+				cout << endl << "Ingreso un elemento no existente en el alfabeto de entrada" << endl;
+			else
+				cout <<endl<<endl;
 		else
 		{
 			estado_actual = matriz[j][i];
 
 			if (estado_actual.esFinal())
-				cout << endl << "Ingreso una palabra existente en el lenguaje " << endl;
+				setLED('b');
+				//cout << endl << "Ingreso una palabra existente en el lenguaje " << endl;
 			else
-				cout << endl << "Ingreso una palabra NO existente en el lenguaje " << endl;
+				setLED('a');
+				//cout << endl << "Ingreso una palabra NO existente en el lenguaje " << endl;
+			cout << endl;
 		}
 	}
 }

@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "Automata_Abstract.h"
+#include <Windows.h>
 
 void Automata_Abstract::ingresar_alfabeto()
 {
@@ -131,4 +132,47 @@ int Automata_Abstract::existeInicial()
 	}
 	return B;
 }
+
+void Automata_Abstract::setLED(char letra)
+{
+	LPDWORD pto = 0;
+	LPOVERLAPPED over = 0;
+
+	HANDLE serialHandle;
+	string s = { "COM4" };
+	std::wstring stemp = std::wstring(s.begin(), s.end());
+	LPCWSTR sw = stemp.c_str();
+
+	serialHandle = CreateFile(sw, GENERIC_READ | GENERIC_WRITE, 0, 0, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, 0);
+
+	// Do some basic settings
+	DCB serialParams = { 0 };
+	serialParams.DCBlength = sizeof(serialParams);
+
+	GetCommState(serialHandle, &serialParams);
+	serialParams.BaudRate = 9600;
+	serialParams.ByteSize = 8;
+	serialParams.StopBits = 1;
+	serialParams.Parity = 0;
+	SetCommState(serialHandle, &serialParams);
+
+	// Set timeouts
+	COMMTIMEOUTS timeout = { 0 };
+	timeout.ReadIntervalTimeout = 50;
+	timeout.ReadTotalTimeoutConstant = 50;
+	timeout.ReadTotalTimeoutMultiplier = 50;
+	timeout.WriteTotalTimeoutConstant = 50;
+	timeout.WriteTotalTimeoutMultiplier = 10;
+
+	SetCommTimeouts(serialHandle, &timeout);
+
+	if (letra == 'a')
+		WriteFile(serialHandle, "a", 1, pto, over);
+	else
+		WriteFile(serialHandle, "b", 1, pto, over);
+
+	CloseHandle(serialHandle);
+}
+
+
 
