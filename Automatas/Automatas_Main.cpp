@@ -12,7 +12,7 @@
 int main()
 {	
 	int opcion;
-	/*do
+	do
 	{
 		cout << "Seleccione la opcion a simular: "<<endl;
 		cout << "1: Automata Finito Determinista " << endl << "2: Automata de Pila " << endl <<
@@ -26,7 +26,7 @@ int main()
 	{
 		AFD afd = AFD();
 		cout << endl << "Ingrese @ si quiere ingresar otra palabra." << endl << endl;
-		do{
+		do {
 			afd.comprobar_palabra();
 			cout << endl << endl << "Ingrese nueva palabra:" << endl;
 		} while (0 != 1);
@@ -52,14 +52,15 @@ int main()
 		} while (0 != 1);
 		break;
 	}
-	}*/
-	vector<int> a;
-	for (int i = 0; i < 10; i++)
-		a.push_back(i);
-	cout << a[0]<<endl;
-	a.insert(a.begin(), -1);
-	for (int i = 0; i < 10; i++)
-		cout << a[i];
+	}
+
+	//vector<int> a;
+	//for (int i = 0; i < 10; i++)
+	//	a.push_back(i);
+	//cout << a[0]<<endl;
+	//a.insert(a.begin(), -1);
+	//for (int i = 0; i < 10; i++)
+	//	cout << a[i];
 	//setLED('a');
 	//Sleep(1000);
 	//setLED('b');
