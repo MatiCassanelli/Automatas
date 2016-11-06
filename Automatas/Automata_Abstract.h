@@ -3,6 +3,7 @@
 #include <vector>
 #include <iostream>
 #include <conio.h>
+#include <Windows.h>
 
 class Automata_Abstract
 {

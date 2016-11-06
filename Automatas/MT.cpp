@@ -91,8 +91,7 @@ void MT::comprobar_palabra()
 		cin >> ingreso;
 	}
 	
-	int i;
-	int j;
+	int i, j;
 
 	while (estado_actual.esFinal()==false)
 	{
@@ -105,6 +104,8 @@ void MT::comprobar_palabra()
 	}
 	if (cinta[cinta.size() - 1] != "%")
 		cinta.push_back("%");
+	if (cinta[0] != "%")
+		cinta.insert(cinta.begin(), "%");
 	for (int m = 0; m < cinta.size(); m++)
 		cout<<cinta[m];
 	cout << endl;

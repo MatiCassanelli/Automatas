@@ -125,7 +125,8 @@ void AP::comprobar_palabra()
 					{
 						pila.pop();
 
-						if (pila.top() == "#")
+						if (pila.top() == "#")		//agregar estado_actual.esFinal() && pila.top()=="#")
+						//if(estado_actual.esFinal() && pila.top() == "#")
 							cout << endl << "Palabra aceptada"<<endl;
 						else
 							cout << endl << "Palabra no aceptada en el lenguaje"<<endl;
