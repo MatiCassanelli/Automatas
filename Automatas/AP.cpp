@@ -7,6 +7,7 @@ AP::AP()
 	pila.push(simbolo_pila_vacia);
 	elementos_en_pila.push_back(simbolo_pila_vacia);
 	ingreso_alfabeto_repetido();
+	alfabeto_entrada.push_back(lamda);
 	ingreso_estados_repetido();
 	estados.push_back(qe);
 	ingresar_elemento_pila_repetido();
@@ -97,13 +98,16 @@ void AP::comprobar_palabra()
 		int i = 0, j = 0, k = 0;
 
 		ingreso = _getch();
-		if (ingreso != '@') {
-			parche = ingreso;
-			if (buscarAlfabeto(parche) != -1)
-				palabra.push_back(ingreso);
-			for (int i = 0; i < palabra.size(); i++)
-				cout << palabra[i];
+		parche = ingreso;
 
+		if (buscarAlfabeto(parche) != -1)
+			palabra.push_back(ingreso);
+
+		for (int i = 0; i < palabra.size(); i++)
+			cout << palabra[i];
+
+		if (ingreso != '@') {
+			
 			i = buscarEstado(estado_actual.getNombre());
 			j = buscarAlfabeto(parche);
 			k = buscar_elemento_pila(pila.top());
@@ -127,9 +131,15 @@ void AP::comprobar_palabra()
 
 						if (pila.top() == "#")
 						{
-							cout << endl << "Palabra aceptada" << endl;	
-							//cout << endl << "Palabra aceptada"<<endl;
-							setLED('b');
+							//int lam = alfabeto_entrada.size()-1;	//posicion de lamda en el vector alfabeto
+							i = buscarEstado(estado_actual.getNombre());
+							j = buscarAlfabeto(lamda);
+							k = buscar_elemento_pila(pila.top());
+							if (cubo[i][j][k].esFinal() == true)	//si la transicion lamda lleva al estado de salida
+							{
+								cout << endl << "Palabra aceptada" << endl;	//cout << endl << "Palabra aceptada"<<endl;
+								setLED('b');
+							}
 						}
 						else
 						{
@@ -182,8 +192,6 @@ void AP::ingresar_elemento_pila()
 
 	if (buscar_elemento_pila(ingreso) == -1)
 		elementos_en_pila.push_back(ingreso);
-
-	
 }
 
 int AP::buscar_elemento_pila(string ingreso)
@@ -196,23 +204,4 @@ int AP::buscar_elemento_pila(string ingreso)
 	return -1;
 }
 
-void AP::setEstado(int i, int j, int k, Estado est)
-{
-	cubo[i][j][k] = est;
-}
-
-void AP::setElementos(string singreso)
-{
-	elementos_en_pila.push_back(singreso);
-}
-
-void AP::setEstados(Estado est)
-{
-	estados.push_back(est);
-}
-
-void AP::setAlfabeto(string alf)
-{
-	alfabeto_entrada.push_back(alf);
-}
 
