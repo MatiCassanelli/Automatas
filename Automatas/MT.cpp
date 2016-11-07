@@ -91,7 +91,7 @@ void MT::comprobar_palabra()
 		cin >> ingreso;
 	}
 	
-	int i, j;
+	int i=0, j=0;
 
 	while (estado_actual.esFinal()==false)
 	{

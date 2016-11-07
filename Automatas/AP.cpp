@@ -127,7 +127,8 @@ void AP::comprobar_palabra()
 
 						if (pila.top() == "#")
 						{
-							cout << endl << "Palabra aceptada" << endl;	//cout << endl << "Palabra aceptada"<<endl;
+							cout << endl << "Palabra aceptada" << endl;	
+							//cout << endl << "Palabra aceptada"<<endl;
 							setLED('b');
 						}
 						else
